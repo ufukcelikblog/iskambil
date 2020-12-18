@@ -36,10 +36,48 @@ public class El {
     return this.eldekiKartSayisi;
   }
 
-  public void seriyeDiz() {
-    for (int k = 0; k < eldekiKartSayisi - 1; k++) {
-      for (int x = 1; x < eldekiKartSayisi; x++) {
+  public void seriBuyuktenKucuge() {
+    for (int k = 0; k < eldekiKartSayisi; k++) {
+      for (int x = 0; x < eldekiKartSayisi; x++) {
         if (kartlar[k].getNo() > kartlar[x].getNo()) {
+          Kart temp = kartlar[k];
+          kartlar[k] = kartlar[x];
+          kartlar[x] = temp;
+        }
+      }
+    }
+  }
+
+   public void seriKucuktenBuyuge() {
+    for (int k = 0; k < eldekiKartSayisi; k++) {
+      for (int x = 0; x < eldekiKartSayisi; x++) {
+        if (kartlar[k].getNo() < kartlar[x].getNo()) {
+          Kart temp = kartlar[k];
+          kartlar[k] = kartlar[x];
+          kartlar[x] = temp;
+        }
+      }
+    }
+  }
+
+   public void isimKucuktenBuyuge() {
+    for (int k = 0; k < eldekiKartSayisi; k++) {
+      for (int x = 0; x < eldekiKartSayisi; x++) {
+        if (kartlar[k].getDeger() < kartlar[x].getDeger()) {
+          Kart temp = kartlar[k];
+          kartlar[k] = kartlar[x];
+          kartlar[x] = temp;
+        }
+      }
+    }
+  }
+
+
+   public void isimBuyuktenKucuge() {
+    this.seriBuyuktenKucuge();
+    for (int k = 0; k < eldekiKartSayisi; k++) {
+      for (int x = 0; x < eldekiKartSayisi; x++) {
+        if (kartlar[k].getNo()%13 > kartlar[x].getNo()%13) {
           Kart temp = kartlar[k];
           kartlar[k] = kartlar[x];
           kartlar[x] = temp;

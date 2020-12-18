@@ -1,6 +1,5 @@
 
 import java.awt.GridLayout;
-import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
@@ -30,15 +29,15 @@ public class Deneme {
     deste = new Deste();
     deste.karistir();
 
-    El oyuncu = new El(13);
-    for (int k = 0; k < 13; k++) {
+    El oyuncu = new El(20);
+    for (int k = 0; k < 20; k++) {
       oyuncu.kartEkle(deste.kartVer());
       oyuncuPanelKarisik.add(new JLabel(oyuncu.kartGoster(k).getResim()));
     }
     oyunPanel[0] = oyuncuPanelKarisik;
 
-    oyuncu.seriyeDiz();
-    for (int k = 0; k < 13; k++) {
+    oyuncu.isimBuyuktenKucuge();
+    for (int k = 0; k < 20; k++) {
       oyuncuPanelSirali.add(new JLabel(oyuncu.kartGoster(k).getResim()));
     }
     oyunPanel[1] = oyuncuPanelSirali;
